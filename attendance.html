@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://demo.web3designs.com/practical-css3-tables-with-rounded-corners.htm -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Aakash Attendance</title>
+<link rel="stylesheet" href="css/main.css" type="text/css"/>
+ <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+ <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+</head>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	
+function monitor_screen_animation() {
+    setInterval(function() { // this code is executed every 5 seconds:
+
+     $('.monitor_screen1').delay(5000).animate({top: '29.5%',opacity:1});	
+	 $('.monitor_screen1').delay(5000).animate({top: '-11%',opacity:0});	
+	 $('.monitor_screen1').delay(5000).animate({top: '70%',opacity:0});	
+ 
+	 $('.monitor_screen2').delay(5000).animate({top: '70%',opacity:0});	
+     $('.monitor_screen2').delay(5000).animate({top: '29.5%',opacity:1});	
+	 $('.monitor_screen2').delay(5000).animate({top: '-11%',opacity:0});	
+	 
+	 $('.monitor_screen3').delay(5000).animate({top: '-11%',opacity:0});	
+	 $('.monitor_screen3').delay(5000).animate({top: '70%',opacity:0});	
+     $('.monitor_screen3').delay(5000).animate({top: '29.5%',opacity:1});
+	 
+	 $('.monitor_screen1_text').delay(5000).animate({top: '85%',opacity:1});	
+	 $('.monitor_screen1_text').delay(5000).animate({top: '65%',opacity:0});	
+	 $('.monitor_screen1_text').delay(5000).animate({top: '105%',opacity:0});		
+	 
+	 $('.monitor_screen2_text').delay(5000).animate({top: '105%',opacity:0});	
+	 $('.monitor_screen2_text').delay(5000).animate({top: '85%',opacity:1});
+	 $('.monitor_screen2_text').delay(5000).animate({top: '65%',opacity:0});			
+	   
+	 $('.monitor_screen3_text').delay(5000).animate({top: '65%',opacity:0});
+	 $('.monitor_screen3_text').delay(5000).animate({top: '105%',opacity:0});	
+	  $('.monitor_screen3_text').delay(5000).animate({top: '85%',opacity:1});				
+	
+	 }, 10);
+}
+	
+	$(monitor_screen_animation);
+	
+}); 
+
+</script>
+
+<body style="overflow:hidden">
+<img id="logo_main" src="images/logo1.png" style="top:1%; left:1%;width:15%">
+
+<h1 class="web_header" >Aakash Attendance</h1>
+
+<img class="monitor" src="images/web_projects/monitor.png">
+<img class="monitor_screen1" src="images/web_projects/monitor_screen3.png">
+<img class="monitor_screen2" src="images/web_projects/monitor_screen1.png">
+<img class="monitor_screen3" src="images/web_projects/monitor_screen2.png">
+
+<div class="web_text monitor_screen1_text" style="left:38% ; opacity:1">
+<p>This is an awesome website....<br>
+Dare if you say no...</p>
+</div>
+
+
+<div class="web_text monitor_screen2_text" style="left:36% ; opacity:0">
+<p>This is also an awesome website....<br>
+Dare if you say no...</p>
+</div>
+
+
+<div class="web_text monitor_screen3_text" style="left:35% ; opacity:0">
+<p>This is very very awesome website....<br>
+Dare if you say no...</p>
+</div>
+
+<div class="web_project_btn_panel">
+ <a href="#" title="Download" style="color:#000;"><i class="fa fa-download fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="#" title="View Source" style="color:#000;"><i class="fa fa-github fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" title="Documentation" style="color:#000;"><i class="fa fa-file-text fa-2x"></i></a>
+</div>
+
+</body></html>

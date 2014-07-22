@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://demo.web3designs.com/practical-css3-tables-with-rounded-corners.htm -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Aakash Lab | IIT Bombay</title>
+<link rel="stylesheet" href="css/main_mobile.css" type="text/css"/>
+
+ <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+
+ <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.queryloader2.js"></script> 
+<script type="text/javascript">
+		
+	$(document).ready(function () {
+		
+		// this is for the loading animation 
+  /* $("body").queryLoader2({
+        barColor: "#FFF",
+        backgroundColor: "#333",
+        percentage: false,
+        barHeight: 2,
+        completeAnimation: "grow"
+    });*/
+	
+	 $('#div_header').delay(1000).animate({top: '0px'});
+	
+	 $('#menu_button').click(function () {
+			 
+        var $navbar = $('#navbar'),
+            val =  $('#navbar').get(0).style.right;
+					if(val!='0px'){
+						$navbar.animate({right: '0px'},500);	
+						 $('#menu_button').animate({right: '120px'},500);	
+					}
+					else{
+						$navbar.animate({right: '-120px'},500);
+						$('#menu_button').animate({right: '0px'},500);
+					}
+    	});
+	
+	});
+</script>
+</head>
+
+<body>
+
+<!-- <div id="comming_soon_div">
+  	 <img id="comming_soon" src="images/comming_soon.jpg">
+ </div>-->
+ 
+ <div id="div_header">
+ 	 <div></div>
+  	 <img id="aakashlab_logo" src="images/aakashlab_logo.png">
+     <img id="menu_button" src="images/Mobile_menu_button.png">
+    
+ </div>
+ 
+  <div id="navbar">
+  	<ul>
+    	<li>Home</li>
+        <li>About Us</li>
+        <li>Expertise</li>
+        <li>Projects</li>
+        <li>Downloads</li>
+        <li>Our Team</li>
+        <li>Contact Us</li>
+        
+    </ul>
+  </div>
+ 
+ <div id="page1">
+ 	 <img id="page1_bg" src="images/sky.jpg">
+     <p>Who says Aakash is the limit?</br> For us it is just the <strong>beginning!</strong></p>
+ </div>
+ 
+ <div id="page2">
+ 	 <img id="page2_logo" src="images/Aakash_logo.png">
+     <p>Aakash lab was set up in February 2012, to develop android applications for the </br><strong>Aakash Project at IIT Bombay</strong> funded by </br><strong>NMEICT (National Mission on Education through Information and Communication Technology)</strong>.</br></br>
+
+Currently we develop android as well as web applictions for the </br><strong>empowerment of students and teachers</strong>.</br></br>
+
+We are a gang of software developers who not only deliver cool apps but also inculcate the best practices to develop them.</p>
+ </div>
+ 
+ <div id="page3"> 
+    <!-- <img id="we_love" src="images/we_love.png">-->
+     <p id="we_love">We Love</p>
+     <div id="we_love_inside_div">
+     	<marquee behavior="scroll" direction="left" scrollamount="3"><img id="we_love_img" src="images/mobile_we_love.png"></marquee>
+     </div>
+ </div> 
+ 
+  <div id="page4">
+  		<p class="p_heading">Our Expertise</p>
+        
+        <div class="row" ><div class="div_img"><img src="images/android.png" style="padding-top:20px;"></div><p>Mobile apps running on one of most popular platform   - Android, are operable on the Aakash Tablet.
+Also, we conduct workshops to upskill students in Android.
+</p></div>
+
+<hr>
+        <div class="row"><div class="div_img"><img src="images/web-logo1.jpg" style="padding-top:10px;"></div><p>Web Applications based on PHP, HTML5, Django, Ruby on Rails, Javascript are delivered to be
+workable in management and educational scenario.</p></div>
+<hr>
+        <div class="row"><div class="div_img"><img src="images/computer.png"></div><p>Desktop Applications based on Java, Python and other common languages are developed to perform specialized activity.
+</p></div>
+  </div>
+ 
+  <div id="page5">
+  	<img src="images/page5-bg1.png">
+   </div> 
+   
+   <div id="page6">
+  	<p class="p_heading">Our Projects</p>
+    
+    <div class="div_category">
+    	<div class="div_category_type"><img src="images/android_vertical_tag.png"></div>
+        <div class="div_category_inner">
+        	<div class="div_project_thumb">
+        	</div>
+            
+            <div class="div_project_thumb">
+        	</div>
+            
+            <div class="div_project_thumb">
+        	</div>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <div class="div_category">
+  	 <div class="div_category_type"> <img src="images/web_vertical_tag.png"></div>
+        <div class="div_category_inner">
+        	<div class="div_project_thumb">
+        	</div>
+            
+            <div class="div_project_thumb">
+        	</div>
+        </div>
+    </div>
+   
+   </div> 
+</body></html>

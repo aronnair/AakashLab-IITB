@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Aakash Lab | IIT Bombay</title>
+  
+   <meta name="author" content="Arun Nair">
+   <meta name="author" content="Ajay Babar">
+   <meta name="keywords" content="Jarallax, Aakash, Aakash Lab, IITB, IIT Bombay, HTML, JavaScript, Jquery">
+ 
+ <script type="text/javascript">
+	if (navigator.userAgent.match(/(iphone|ipod|blackberry|android|palm|windows\s+ce|mobile)/i))
+	{ location.replace("mobile_view.html"); }
+</script>
+ 
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jarallax.js"></script>
+    <script type="text/javascript" src="js/jquery.queryloader2.js"></script>
+     
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+   		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/modernizr.custom.63321.js"></script>
+
+    
+
+
+<!-- GOOGLE MAP SCRIPTS-->  
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAXneClmmMACFoL38wQYb_fRhSzs7W6Ack&sensor=false">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(19.134064,72.916273);
+var marker;
+
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:18,
+  scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+	keyboardShortcuts: false,
+    draggable: true,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+marker=new google.maps.Marker({
+  position:myCenter,
+   icon:'images/we_are_here.png',
+  animation: google.maps.Animation.BOUNCE
+  
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<!-- GOOGLE MAP SCRIPTS END--> 
+
+<script type="text/javascript">
+	
+	
+	
+	$(document).ready(function () {
+
+	if($(window).width() > 992) {		  
+	$('#scroll_help,#scroll_help1').delay(10000).animate({right: '-6%'});
+	
+	function help_blink(){
+		var $scroll_help1 = $('#scroll_help1'),
+            val = $scroll_help1.css('opacity') === '0' ? '1' : '0';
+        $scroll_help1.animate({
+            opacity: val
+        }, 1000, function(){
+			help_blink();
+			}	);
+		
+		}
+	help_blink();
+ 
+		// this is for the loading animation 
+   $("body").queryLoader2({
+        barColor: "#FFF",
+        backgroundColor: "#333",
+        percentage: false,
+        barHeight: 2,
+        completeAnimation: "grow"
+    });
+	}
+	});
+	
+			// scrolling animation section
+       init_jarallax = function(){
+		 
+
+       var jarallax = new Jarallax(new ControllerScroll(true));
+//jarallax = new Jarallax();
+
+var currentProgress = 0;
+var progressSteps = 1 / 7;
+		
+		
+		// This is for showing which menu item is active
+		jarallax.setDefault('#nav_home,#nav_vision,#nav_about,#nav_expertise,#nav_project,#nav_download,#nav_team,#nav_contact', {opacity:0.15});
+		jarallax.addAnimation('#nav_vision',[{progress: '3', opacity:1}, {progress: '9', opacity:1}]);
+		jarallax.addAnimation('#nav_about',[{progress: '10', opacity:1}, {progress: '13', opacity:1}]);
+		jarallax.addAnimation('#nav_expertise',[{progress: '30', opacity:1}, {progress: '41', opacity:1}]);
+		jarallax.addAnimation('#nav_project',[{progress: '45', opacity:1}, {progress: '54', opacity:1}]);
+		jarallax.addAnimation('#nav_download',[{progress: '54', opacity:1}, {progress: '65', opacity:1}]);
+		jarallax.addAnimation('#nav_project',[{progress: '65', opacity:1}, {progress: '73', opacity:1}]);
+		jarallax.addAnimation('#nav_team',[{progress: '77', opacity:1}, {progress: '90', opacity:1}]);
+		jarallax.addAnimation('#nav_contact',[{progress: '90', opacity:1}, {progress: '99', opacity:1}]);
+		
+		jarallax.setDefault('#scroll_help,#scroll_help1', {bottom:'5%'});
+		jarallax.addAnimation('#scroll_help,#scroll_help1',[{progress: '0', opacity:1,bottom:'5%'}, {progress: '1', bottom:'5%'}]);
+		jarallax.addAnimation('#scroll_help,#scroll_help1',[{progress: '1', opacity:1,bottom:'5%'}, {progress: '2', bottom:'-105%'}]);
+		jarallax.addAnimation('#scroll_help,#scroll_help1',[{progress: '2', opacity:2,bottom:'-105%'}, {progress: '100%', bottom:'-105%'}]);
+		
+		
+		jarallax.setDefault('#down_arrow', {opacity:1,top:'85%'});
+		jarallax.addAnimation('#down_arrow',[{progress: '0', opacity:1,top:'85%'}, {progress: '1', opacity:0,top:'85%'}]);
+		jarallax.addAnimation('#down_arrow',[{progress: '1', opacity:0,top:'85%'}, {progress: '2', opacity:0,top:'-100%'}]);
+		jarallax.addAnimation('#down_arrow',[{progress: '2', opacity:0,top:'-100%'}, {progress: '100%', opacity:0,top:'-100%'}]);
+      
+       jarallax.setDefault('#img_page1', {opacity:1,top:'0%'});
+	   jarallax.addAnimation('#img_page1',[{progress: '0', opacity:1,top:'0%'}, {progress: '1', opacity:0,top:'0%'}]);
+	   jarallax.addAnimation('#img_page1',[{progress: '1', opacity:0,top:'0%'}, {progress: '2', opacity:0,top:'-100%'}]);
+	   jarallax.addAnimation('#img_page1',[{progress: '2', opacity:0,top:'-100%'}, {progress: '100%', opacity:0,top:'-100%'}]);
+	   
+	   jarallax.setDefault('#logo_main,#logo_main1', {top:'23%', left:'18%', width:'63%' });
+	   jarallax.addAnimation('#logo_main,#logo_main1',[{progress: '0',top:'23%', left:'18%', width:'63%'},{progress: '2',top:'23%', left:'18%', width:'63%'}]);
+	  jarallax.addAnimation('#logo_main,#logo_main1',[{progress: '2', top:'23%', left:'18%', width:'63%'}, {progress: '3', top:'1%', left:'35%',width:'30%'}]);
+	   jarallax.addAnimation('#logo_main,#logo_main1',[{progress: '3',top:'1%', left:'35%',width:'30%'}, {progress: '13',top:'1%', left:'35%',width:'30%'}]);
+	   jarallax.addAnimation('#logo_main,#logo_main1',[{progress: '13',top:'1%', left:'35%',width:'30%'}, {progress: '15',top:'1%', left:'1%',width:'15%'}]);
+		jarallax.addAnimation('#logo_main,#logo_main1',[{progress: '15',top:'1%', left:'1%',width:'15%'}, {progress: '100%',top:'1%', left:'1%',width:'15%'}]);
+
+   jarallax.setDefault('#logo_main', {opacity:1});
+   jarallax.setDefault('#logo_main1', {opacity:0});
+   jarallax.addAnimation('#logo_main',[{progress: '3',opacity:1},{progress: '3',opacity:0}]);
+      jarallax.addAnimation('#logo_main',[{progress: '3',opacity:0},{progress: '100%',opacity:0}]);
+	  jarallax.addAnimation('#logo_main1',[{progress: '3',opacity:0},{progress: '3',opacity:1}]);
+      jarallax.addAnimation('#logo_main1',[{progress: '3',opacity:1},{progress: '100%',opacity:1}]);
+	 	   
+	    jarallax.setDefault('#menu', {opacity:0 });
+	    jarallax.addAnimation('#menu',[{progress: '0',opacity:0},{progress: '2',opacity:0}]);
+	    jarallax.addAnimation('#menu',[{progress: '2',opacity:0},{progress: '3',opacity:1}]);
+		jarallax.addAnimation('#menu',[{progress: '3',opacity:1},{progress: '100%',opacity:1}]);
+	   
+	   jarallax.setDefault('#since', {opacity:0});
+	    jarallax.addAnimation('#since',[{progress: '0',opacity:0}, {progress: '10',opacity:0}]);
+	   jarallax.addAnimation('#since',[{progress: '10',opacity:0}, {progress: '11',opacity:0.3}]);
+	   jarallax.addAnimation('#since',[{progress: '11',opacity:0.3}, {progress: '12',opacity:1}]);
+	   jarallax.addAnimation('#since',[{progress: '12',opacity:1}, {progress: '13',opacity:0.5}]);
+	    jarallax.addAnimation('#since',[{progress: '13',opacity:0.5}, {progress: '14',opacity:0}]);
+	    jarallax.addAnimation('#since',[{progress: '14',opacity:0}, {progress: '100%',opacity:0}]);
+		
+	   jarallax.setDefault('#vision', {left:'-100%'});
+	    jarallax.addAnimation('#vision',[{progress: '0', left:'-100%'}, {progress: '2',left:'-100%'}]);
+	   jarallax.addAnimation('#vision',[{progress: '2',left:'-100%'}, {progress: '4',left:'60%'}]);
+	   jarallax.addAnimation('#vision',[{progress: '4', left:'60%'}, {progress: '6',left:'70%'}]);
+	   jarallax.addAnimation('#vision',[{progress: '6', left:'70%'}, {progress: '8',left:'160%'}]);
+	    jarallax.addAnimation('#vision',[{progress: '8', left:'160%'}, {progress: '100%',left:'160%'}]);
+	   
+		jarallax.setDefault('#quote,#quote1,#quote2', {opacity:0,left:'200%'});
+	    jarallax.addAnimation('#quote,#quote1,#quote2',[{progress: '0', opacity:0,left:'200%'}, {progress: '2',opacity:0,left:'200%'}]);
+	   jarallax.addAnimation('#quote',[{progress: '2',opacity:0,left:'200%'}, {progress: '3', opacity:0.3,left:'50%'}]);
+	    jarallax.addAnimation('#quote',[{progress: '3',opacity:0.3,left:'50%'}, {progress: '4', opacity:1,left:'12%'}]);
+	   jarallax.addAnimation('#quote',[{progress: '4',opacity:1,left:'12%'}, {progress: '7', opacity:1,left:'12%'}]);
+	   jarallax.addAnimation('#quote1,#quote2',[{progress: '2',opacity:0,left:'200%'}, {progress: '5', opacity:0,left:'12%'}]);
+	    jarallax.addAnimation('#quote1',[{progress: '5',opacity:1,left:'12%'}, {progress: '7', opacity:1,left:'12%',}]);
+		jarallax.addAnimation('#quote2',[{progress: '5',opacity:0,left:'12%'}, {progress: '6', opacity:0,left:'12%'}]);
+		jarallax.addAnimation('#quote2',[{progress: '6',opacity:0,left:'12%'}, {progress: '7', opacity:1,left:'12%'}]);
+	    jarallax.addAnimation('#quote,#quote1,#quote2',[{progress: '7',opacity:1,left:'12%'}, {progress: '8', opacity:1,left:'12%'}]);
+		jarallax.addAnimation('#quote,#quote1,#quote2',[{progress: '8',opacity:1,left:'12%'}, {progress: '9', opacity:0,left:'-100%'}]);
+		 jarallax.addAnimation('#quote,#quote1,#quote2',[{progress: '9', opacity:0,left:'-100%'}, {progress: '100%', opacity:0,left:'-100%'}]);
+		 
+		 jarallax.setDefault('#page1', {opacity:1});
+	   jarallax.addAnimation('#page1',[{progress: '0', top:'0%'}, {progress: '9', top:'0%'}]);
+	   jarallax.addAnimation('#page1',[{progress: '9', top:'0%'}, {progress: '10', top:'-80%'}]);
+	   jarallax.addAnimation('#page1',[{progress: '10', top:'-80%'}, {progress: '14', top:'-80%'}]);
+		jarallax.addAnimation('#page1',[{progress: '14', top:'-80%'}, {progress: '16', top:'-150%'}]);
+/*		jarallax.addAnimation('#page1',[{progress: '9', opacity:1}, {progress: '11', opacity:0}],['mozilla'], true);
+	   jarallax.addAnimation('#page1',[{progress: '11', opacity:0}, {progress: '14', opacity:0}],['mozilla'], true);
+		jarallax.addAnimation('#page1',[{progress: '14', opacity:0}, {progress: '16', opacity:0}],['mozilla'], true);*/
+		jarallax.addAnimation('#page1',[{progress: '16', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+
+	   jarallax.setDefault('#page2', {height:'100%'});
+	   jarallax.addAnimation('#page2',[{progress: '0', height:'100%'}, {progress: '60', height:'100%'}]);
+     	jarallax.addAnimation('#page2',[{progress: '60', height:'100%'}, {progress: '95', height:'0%'}]);
+		jarallax.addAnimation('#page2',[{progress: '95', height:'0%'}, {progress: '100%', height:'0%'}]);
+		
+		jarallax.setDefault('#about_us', {top:'20%',opacity:1});
+	   jarallax.addAnimation('#about_us',[{progress: '0', top:'20%'}, {progress: '30', top:'20%'}]);
+	   jarallax.addAnimation('#about_us',[{progress: '14', opacity:0}, {progress: '99',opacity:0}]);
+	   jarallax.addAnimation('#about_us',[{progress: '30', top:'20%'}, {progress: '30', top:'-150%'}]);
+	   jarallax.addAnimation('#about_us',[{progress: '30', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+
+
+		
+		jarallax.setDefault('#we_android,#we_opensource,#we_linux,#we_windows,#we_web,#we_tea', {opacity:0,top:'150%'});
+	  	jarallax.addAnimation('#we_android,#we_opensource,#we_linux,#we_windows,#we_web,#we_tea',[{progress: '14', top:'150%'}, {progress: '14', top:'27%'}]);
+		jarallax.addAnimation('#we_opensource',[{progress: '14', top:'40%',opacity:0}, {progress: '15', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_opensource',[{progress: '15', top:'27%',opacity:1}, {progress: '16', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_opensource',[{progress: '16', top:'27%',opacity:1}, {progress: '17', top:'10%',opacity:0}]);
+		jarallax.addAnimation('#we_android',[{progress: '17', top:'40%',opacity:0}, {progress: '18', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_android',[{progress: '18', top:'27%',opacity:1}, {progress: '19', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_android',[{progress: '19', top:'27%',opacity:1}, {progress: '20', top:'10%',opacity:0}]);
+		jarallax.addAnimation('#we_linux',[{progress: '20', top:'40%',opacity:0}, {progress: '21', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_linux',[{progress: '21', top:'27%',opacity:1}, {progress: '22', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_linux',[{progress: '22', top:'27%',opacity:1}, {progress: '23', top:'10%',opacity:0}]);
+		jarallax.addAnimation('#we_web',[{progress: '23', top:'40%',opacity:0}, {progress: '24', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_web',[{progress: '24', top:'27%',opacity:1}, {progress: '25', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_web',[{progress: '25', top:'27%',opacity:1}, {progress: '26', top:'10%',opacity:0}]);
+		jarallax.addAnimation('#we_tea',[{progress: '26', top:'40%',opacity:0}, {progress: '27', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_tea',[{progress: '27', top:'27%',opacity:1}, {progress: '28', top:'27%',opacity:1}]);
+		jarallax.addAnimation('#we_tea',[{progress: '28', top:'27%',opacity:1}, {progress: '29', top:'10%',opacity:0}]);
+	
+		
+		jarallax.setDefault('#page3', {top:'95%'});
+	  	jarallax.addAnimation('#page3',[{progress: '0', top:'95%'}, {progress: '13', top:'95%'}]);
+		jarallax.addAnimation('#page3',[{progress: '13', top:'95%'}, {progress: '14', top:'10%'}]);
+		jarallax.addAnimation('#page3',[{progress: '14', top:'10%'}, {progress: '29', top:'10%'}]);
+		jarallax.addAnimation('#page3',[{progress: '29', top:'10%'}, {progress: '33', top:'-150%'}]);
+		jarallax.addAnimation('#page3',[{progress: '33', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+		
+		
+	   jarallax.setDefault('#page4', {top:'100%'});
+	   jarallax.addAnimation('#page4',[{progress: '0', top:'100%'}, {progress: '28', top:'100%'}]);
+		jarallax.addAnimation('#page4',[{progress: '28', top:'100%'}, {progress: '31', top:'0%'}]);
+		jarallax.addAnimation('#page4',[{progress: '31', top:'0%'}, {progress: '40', top:'0%'}]);
+		jarallax.addAnimation('#page4',[{progress: '40', top:'0%'}, {progress: '43', top:'-110%'}]);
+		jarallax.addAnimation('#page4',[{progress: '43', top:'-110%'}, {progress: '100%', top:'-110%'}]);
+		      
+		 jarallax.setDefault('#layer1', {top:'10%',opacity:0.8});
+	   jarallax.addAnimation('#layer1',[{progress: '28', top:'10%'}, {progress: '44', top:'-50%'}]);	
+	      jarallax.addAnimation('#layer1',[{progress: '44', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+	   
+	    jarallax.setDefault('#layer2', {top:'10%',opacity:0.6});
+	   jarallax.addAnimation('#layer2',[{progress: '28', top:'10%'}, {progress: '44', top:'-25%'}]);	
+	      jarallax.addAnimation('#layer2',[{progress: '44', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+	   
+	    jarallax.setDefault('#layer3', {top:'0%', opacity:0.4});
+	   jarallax.addAnimation('#layer3',[{progress: '28', top:'0%'}, {progress: '44', top:'-10%'}]);	
+	   jarallax.addAnimation('#layer3',[{progress: '44', top:'-150%'}, {progress: '100%', top:'-150%'}]);					                    
+   		
+		
+		jarallax.setDefault('#page5', {top:'150%'});
+	    jarallax.addAnimation('#page5',[{progress: '0', top:'100%'}, {progress: '39', top:'100%'}]);
+		jarallax.addAnimation('#page5',[{progress: '39', top:'100%'}, {progress: '39', top:'0%'}]);
+		jarallax.addAnimation('#page5',[{progress: '39', top:'0%'}, {progress: '46', top:'0%'}]);
+		jarallax.addAnimation('#page5',[{progress: '46', top:'0%'}, {progress: '47', top:'-200%'}]);
+		jarallax.addAnimation('#page5',[{progress: '47', top:'-200%'}, {progress: '100%', top:'-200%'}]);
+
+		jarallax.setDefault('#page5-bg1', {top:'150%'});
+		 jarallax.addAnimation('#page5-bg1',[{progress: '40', top:'10%'}, {progress: '50', top:'-10%'}]);
+		 jarallax.addAnimation('#page5-bg1',[{progress: '50', top:'-10%'}, {progress: '51', top:'-150%'}]);
+		  jarallax.addAnimation('#page5-bg1',[{progress: '51', top:'-150%'}, {progress: '100%', top:'-150%'}]);
+		  
+		  	jarallax.setDefault('#projects_panel', {height:'100%', display:'block'});
+	   jarallax.addAnimation('#projects_panel',[{progress: '75', height:'5%',display:'none'}, {progress: '99', height:'5%',display:'none'}]);
+
+		jarallax.setDefault('#page6', {top:'100%'});
+	   jarallax.addAnimation('#page6',[{progress: '0', top:'100%'}, {progress: '42', top:'100%'}]);
+		jarallax.addAnimation('#page6',[{progress: '43', top:'100%'}, {progress: '46', top:'0%'}]);
+		jarallax.addAnimation('#page6',[{progress: '46', top:'0%'}, {progress: '75', top:'0%'}]);
+		jarallax.addAnimation('#page6',[{progress: '75', top:'0%'}, {progress: '77', top:'-100%'}]);
+		jarallax.addAnimation('#page6',[{progress: '77', top:'-100%'}, {progress: '100%', top:'-100%'}]);
+		
+	jarallax.setDefault('#project_tile1', {top:'5%',left:'0%'});
+	jarallax.addAnimation('#project_tile1',[{progress: '44', top:'25%',opacity:0,left:'70%'}, {progress: '47', top:'5%',opacity:1,left:'0%'}]);
+	jarallax.addAnimation('#project_tile1',[{progress: '47', top:'5%',opacity:1,left:'0%'}, {progress: '71', top:'5%',opacity:1,left:'0%'}]);
+	jarallax.addAnimation('#project_tile1',[{progress: '71', top:'5%',opacity:1,left:'0%'}, {progress: '74', top:'5%',opacity:0,left:'70%'}]);
+	jarallax.addAnimation('#project_tile1',[{progress: '74', top:'-100%',opacity:0,left:'70%'}, {progress: '100%', top:'-100%',opacity:0,left:'70%'}]);
+	   
+	jarallax.setDefault('#project_tile2', {top:'5%',left:'35%'});
+	jarallax.addAnimation('#project_tile2',[{progress: '44', top:'25%',opacity:0}, {progress: '47', top:'5%',opacity:1}]);
+	jarallax.addAnimation('#project_tile2',[{progress: '47', top:'5%',opacity:1}, {progress: '71', top:'5%',opacity:1}]);
+	jarallax.addAnimation('#project_tile2',[{progress: '71', top:'5%',opacity:1}, {progress: '74', top:'5%',opacity:0}]);
+	jarallax.addAnimation('#project_tile2',[{progress: '74', top:'-100%',opacity:0}, {progress: '100%', top:'-100%',opacity:0}]);
+
+	jarallax.setDefault('#project_tile3', {top:'5%',left:'70%'});
+	jarallax.addAnimation('#project_tile3',[{progress: '44', top:'25%',opacity:0,left:'0%'}, {progress: '47', top:'5%',opacity:1,left:'70%'}]);
+	jarallax.addAnimation('#project_tile3',[{progress: '47', top:'5%',opacity:1,left:'70%'}, {progress: '71', top:'5%',opacity:1,left:'70%'}]);
+	jarallax.addAnimation('#project_tile3',[{progress: '71', top:'5%',opacity:1,left:'70%'}, {progress: '74', top:'5%',opacity:0,left:'0%'}]);
+	jarallax.addAnimation('#project_tile3',[{progress: '74', top:'-100%',opacity:0,left:'0%'}, {progress: '100%', top:'-100%',opacity:0,left:'0%'}]);
+	
+	jarallax.setDefault('#page7', {left:'150%'});
+	jarallax.addAnimation('#page7',[{progress: '53', left:'150%'}, {progress: '55',left:'20%'}]);
+	jarallax.addAnimation('#page7',[{progress: '55', left:'20%'}, {progress: '57',left:'0%'}]);
+	jarallax.addAnimation('#page7',[{progress: '57', left:'0%'}, {progress: '65',left:'0%'}]);
+	jarallax.addAnimation('#page7',[{progress: '65', left:'0%'}, {progress: '68',left:'-100%'}]);
+	jarallax.addAnimation('#page7',[{progress: '68', left:'-100%'}, {progress: '100%',left:'-100%'}]);
+	
+	jarallax.setDefault('#downloads_content', {top:'10%',opacity:0});
+	jarallax.addAnimation('#downloads_content',[{progress: '57', top:'10%',opacity:0}, {progress: '59',top:'0%',opacity:1}]);
+	jarallax.addAnimation('#downloads_content',[{progress: '59', top:'0%',opacity:1}, {progress: '63',top:'0%',opacity:1}]);
+	jarallax.addAnimation('#downloads_content',[{progress: '63', top:'0%',opacity:1}, {progress: '65',top:'-10%',opacity:0}]);
+	
+	jarallax.setDefault('#page7_bg', {top:'150%',opacity:0});
+	jarallax.addAnimation('#page7_bg',[{progress: '51', top:'150%',opacity:0}, {progress: '51',top:'0%',opacity:0}]);
+	jarallax.addAnimation('#page7_bg',[{progress: '52', top:'0%',opacity:0}, {progress: '54',top:'0%',opacity:0.7}]);
+	jarallax.addAnimation('#page7_bg',[{progress: '54', top:'0%',opacity:0.7}, {progress: '66',top:'0%',opacity:0.7}]);
+	jarallax.addAnimation('#page7_bg',[{progress: '66', top:'0%',opacity:0.7}, {progress: '68',top:'0%',opacity:0}]);
+	jarallax.addAnimation('#page7_bg',[{progress: '68', top:'150%',opacity:0}, {progress: '100%',top:'150%',opacity:0}]);
+	
+	jarallax.setDefault('#team_heading', {top:'40%'});
+	jarallax.addAnimation('#team_heading',[{progress: '81', top:'40%'}, {progress: '83',top:'0%'}]);
+	jarallax.addAnimation('#team_heading',[{progress: '83', top:'0%'}, {progress: '92',top:'0%'}]);
+	
+	jarallax.setDefault('.member', {opacity:0,top:'2000px' });
+	jarallax.addAnimation('.member',[{progress: '81', top:'2000px'}, {progress: '81',top:'-30px'}]);
+	jarallax.addAnimation('.member',[{progress: '81', top:'-30px'}, {progress: '99',top:'-30px'}]);
+	jarallax.addAnimation('.member',[{progress: '81', opacity:0}, {progress: '83',opacity:1}]);
+	jarallax.addAnimation('.member',[{progress: '83', opacity:1}, {progress: '99',opacity:1}]);
+	
+	jarallax.setDefault('#div_team_category', {opacity:0,bottom:'-20px' });
+	jarallax.addAnimation('#div_team_category',[{progress: '81', bottom:'-20px'}, {progress: '81',bottom:'20px'}]);
+	jarallax.addAnimation('#div_team_category',[{progress: '81', bottom:'20px'}, {progress: '99',bottom:'20px'}]);
+	jarallax.addAnimation('#div_team_category',[{progress: '82', opacity:0}, {progress: '83',opacity:1}]);
+	jarallax.addAnimation('#div_team_category',[{progress: '83', opacity:1}, {progress: '99',opacity:1}]);
+	
+	jarallax.setDefault('#page8', {top:'150%'});
+	jarallax.addAnimation('#page8',[{progress: '74', top:'0%'}, {progress: '74',top:'0%'}]);
+	jarallax.addAnimation('#page8',[{progress: '74', top:'0%'}, {progress: '92',top:'0%'}]);
+	
+	jarallax.setDefault('#page9', {top:'150%'});
+	jarallax.addAnimation('#page9',[{progress: '89', top:'150%'}, {progress: '92',top:'0%'}]);
+	jarallax.addAnimation('#page9',[{progress: '92', top:'0%'}, {progress: '100%',top:'0%'}]);
+	
+	jarallax.setDefault('#contact_bg_div', {left:'100%',opacity:0});
+	jarallax.addAnimation('#contact_bg_div',[{progress: '94', left:'100%',opacity:0}, {progress: '95',left:'80%',opacity:1}]);
+	jarallax.addAnimation('#contact_bg_div',[{progress: '95', left:'80%',opacity:1}, {progress: '100%',left:'80%',opacity:1}]);
+		      
+	jarallax.setDefault('#footer_div', {top:'100%',opacity:0});
+	jarallax.addAnimation('#footer_div',[{progress: '97', top:'100%',opacity:0}, {progress: '99',top:'93%',opacity:0.8}]);
+	                 
+    }
+
+    </script>
+
+
+  </head>
+  <body style="height:16000px;" onload="init_jarallax()">
+ 
+    <img id="logo_main" src="images/logo1.png" onClick="(new Jarallax()).jumpToProgress('0%',1000,30);">
+     <img id="logo_main1" src="images/aakashlab_logo.png" onClick="(new Jarallax()).jumpToProgress('0%',1000,30);">
+    <p id="best_viewed"><span style="color:red;">*</span> Website best viewed in Google Chrome.</p>
+   
+    <div class="content">
+   
+   		<div id="menu" style="display:block;">
+            <ul id="nav">
+                <li class="menu_item"><p>Home</p><a href="#"><span id="nav_home" class="icon icon-home"></span></a></li>
+             	<li class="menu_item"><p>Vision</p><a href="#" onClick="(new Jarallax()).jumpToProgress('4.5%',200,30);" style=":hover {opacity: 1}"><span id="nav_vision" class="icon icon-eye-open"></a></li>
+                <li class="menu_item"><p>About&nbsp;Us</p><a href="#" onClick="(new Jarallax()).jumpToProgress('12.5%',200,30);"><span id="nav_about" class=" icon icon-info-sign"></a></li>
+                <li class="menu_item"><p>Expertise</p><a href="#" onClick="(new Jarallax()).jumpToProgress('35%',200,30);"><span id="nav_expertise" class="icon icon-lightbulb"></a></li>
+                <li class="menu_item"><p>Projects</p><a href="#" onClick="(new Jarallax()).jumpToProgress('50%',200,30);"><span id="nav_project" class="icon icon-laptop"></a></li>
+                <li class="menu_item"><p>Downloads</p><a href="#" onClick="(new Jarallax()).jumpToProgress('60%',200,30);"><span id="nav_download" class="icon icon-download-alt"></a></li>
+                <li class="menu_item"><p>Team</p><a href="#" onClick="(new Jarallax()).jumpToProgress('85%',200,30);"><span id="nav_team" class="icon icon-group"></a></li>
+                <li class="menu_item"><p>Contact Us</p><a href="#" onClick="(new Jarallax()).jumpToProgress('97%',200,30);"><span id="nav_contact" class="icon icon-phone-sign"></a></li>
+            </ul>
+		</div>
+ 
+      	<div id="page1" >      
+        <!--src="images/sky.gif"-->
+          <!-- <img id="gif" alt="sky" src="images/sky.gif">    -->  
+         <video id="gif" autoplay loop poster="images/sky.jpg">
+              <source src="images/sky.mp4" type="video/mp4">
+             <source src="images/sky.webm" type="video/webm">
+           
+		</video>  
+            <img id="img_page1" src="images/bg1b.png">
+            <img id="down_arrow" src="images/down_arrow.png">
+             <img id="scroll_help" src="images/scroll_help.png">
+             <img id="scroll_help1" src="images/scroll_help1.png">
+           <img id="vision" src="images/vision.png">
+           <img id="quote" src="images/quote.png">
+           <img id="quote1" src="images/quote1.png"> 
+           <img id="quote2" src="images/quote2.png">
+           
+           <!--<img id="since" src="images/since.png">-->
+            <!--<div id="div_quote" style="opacity:1">
+           		<img id="quote" src="images/quote.png">
+            </div>-->
+        
+        </div>
+        
+        <div id="page2">  <!-- ABOUT US PAGE-->
+        <img id="about_us" src="images/about.png">
+        	<!--<div id="about_us">
+            	<p id="about_header">Who says Aakash is the limit? For us it is just the beginning! </p>
+                <img id="aakash_logo" src="images/Aakash_logo.png">
+                <p id="aakash_content">Aakash lab was set up to develop android applications for the Aakash Project at IIT Bombay funded by NMEICT (National Mission on Education through Information and Communication Technology)<br>
+<br>
+Currently we develop android as well as web applictions for the empowerment of students and teachers.<br>
+<br>
+We are a gang of software developers who not only deliver cool apps but also inculcate the best practices to develop them.</p>
+            </div>-->
+			
+        	<!--<div id="page2_content">
+            	<p>Who says Aakash is the limit? For us it is just the beginning!
+</p>
+            </div>-->
+		</div>
+     
+       <div id="page3">   <!-- WE LOVE PAGE-->
+        	<img id="we_love" src="images/we_love.png">
+            <img id="we_android" src="images/we_android.png">
+        	<img id="we_opensource" src="images/we_opensource.png">
+            <img id="we_linux" src="images/we_linux.png">
+            <img id="we_web" src="images/we_web.png">
+            <img id="we_tea" src="images/we_tea.png">
+        </div>
+     	
+        <div id="page4">  <!-- EXPERTISE PAGE-->
+        	
+            <img id="layer1" src="images/balloons/layer1.png">
+            <img id="layer2" src="images/balloons/layer2.png">
+            <img id="layer3" src="images/balloons/layer3.png">
+            <img id="expertise_content" src="images/expertise.png">
+        </div>
+        
+ 		  <div id="page5">   <!-- TABLET IMAGE WID APPS PAGE-->
+        	<img id="page5-bg" src="images/page5-bg.jpg">
+            <img id="page5-bg1" src="images/page5-bg1.png">
+        </div>
+        
+         <div id="page6">	 <!-- PROJECTS PAGE-->
+			<!--<a href="projects.html" target="_blank"><p id="project_all">View All >> </p></a>-->
+        	<img id="project_heading" src="images/projects.png">
+         <!--   <h1 id="featured_projects_heading">Our Featured Projects</h1>-->
+            
+            <div id="featured_projects_div">
+            	<div id="project_tile1"><a href="diaslate.html" target="_blank">
+               	 <img id="project_tile1_img" src="images/project_tile1.png">   
+                 <img id="project_tile1_tablet" src="images/diaslate_gif.gif"></a>  
+                </div> 
+               <div id="project_tile2">   <a href="proxymity.html" target="_blank">  
+                <img id="project_tile2_img" src="images/project_tile2.png">
+                <img id="project_tile2_tablet" src="images/proxymity_gif.gif"> </a> 
+                 </div>
+                <div id="project_tile3"><a href="converse.html" target="_blank">
+                <img id="project_tile3_img" src="images/project_tile3.png">
+                 <img id="project_tile3_tablet" src="images/videochat_gif.gif">  </a> 
+                 </div> 
+                
+                
+               
+             </div>
+             
+                  <div id="projects_panel">
+                   		<p id="project_all">View All</p>
+                        <p class="mii" style="margin-top:3%; font-size:xx-large; color:#FFF">Categories</p>
+                        <div class="main mii">
+				<div id="mi-slider" class="mi-slider mii">
+					<ul>
+						<li><a href="diaslate.html" target="_blank"><img src="images/diaslate_icon.png" alt="diaslate_icon"><h4>DiaSlate</h4></a></li>
+						<li><a href="proxymity.html" target="_blank"><img src="images/proxymity_icon.png" alt="proxymity_icon"><h4>proxyMITY</h4></a></li>
+                       <!-- <li><a href="proxymity_wifi.html" target="_blank"><img src="images/proxymity_icon.png" alt="proxymity_icon"><h4>proxyMITY WIFI</h4></a></li>-->
+						<li><a href="converse.html" target="_blank"><img src="images/converse_icon.png" alt="converse_icon"><h4>Converse</h4></a></li>
+						<!--<li><a href="#"><img src="images/diaslate_icon.png" alt="img04"><h4>Educational Content</h4></a></li>-->
+
+					</ul>
+					<ul>
+						<li><a href="http://www.aakashlabs.in" target="_blank"><img src="images/aakashlabs.png" alt="aakashlabs"><h4>Aakash Labs</h4></a></li>
+						<li><a href="http://www.it.iitb.ac.in/aakashtechsupport/" target="_blank"><img src="images/tech_support.png" alt="tech_support"><h4>Aakash Tech Support</h4></a></li>
+
+						<!--<li><a href="#" target="_blank"><img src="images/attendance.png" alt="img08"><h4>This Website</h4></a></li>-->
+					</ul>
+				<!--	<ul>
+						<li><a href="#"><img src="images/9.jpg" alt="img09"><h4>Casual</h4></a></li>
+						<li><a href="#"><img src="images/10.jpg" alt="img10"><h4>Luxury</h4></a></li>
+						<li><a href="#"><img src="images/11.jpg" alt="img11"><h4>Sport</h4></a></li>
+					</ul>-->
+					
+                   
+					<nav>
+						<a href="#">Android</a>
+						<a href="#">Web</a>
+					<!--<a href="#">TABS</a>-->
+						
+					</nav>
+				</div>
+			</div>
+                  </div>
+        </div>
+        
+    	<div id="page7_bg">   <!-- DOWNLOADS TRANSPARENT BG-->
+               
+        </div>
+        
+         <div id="page7">	 <!-- DOWNLOADS PAGE-->
+         
+         	<img src="images/download_documentation_head1.png" id="downloads_contents1" >
+         	<a href="downloads.html" target="_blank" title="View Downloads"><img src="images/downloads_icon.png" id="downloads_icon" class="big_icon"></a>
+            <a href="http://www.it.iitb.ac.in/arndg/aakashlab/projects/index.html"  target="_blank" title="View Documentations"><img src="images/documentation_icon.png" id="documentation_icon" class="big_icon"></a>
+            <img src="images/download_documentation_head2.png" id="downloads_contents2">
+         	<!--<p id="downloads_content" >
+Would you like to check out our <br><br>
+
+<a href="downloads.html" target="_blank" title="View Downloads"><i class="fa fa-download fa-2x big_icon" ></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.it.iitb.ac.in/arndg/aakashlab/projects/index.html"  target="_blank" title="View Documentations"><i class="fa fa-file-text fa-2x big_icon"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+
+DOWNLOADS  &nbsp;&nbsp;  &   &nbsp;&nbsp;  DOCUMENTATIONS ?</p>-->
+        </div>
+ 
+        
+        <div id="page8">	
+        	<!--<div id="team_bg" style="position:absolute; top:0; width:100%; height:100%; background-color:#09F; opacity:0; z-index:-1; background-image:url(images/02.png)"></div> <!-- TEAM PAGE-->
+         	<h1 id="team_heading" onClick="reset_members();">Our Team</h1>
+            
+            <img id="team_all" class="member" src="images/Team/team_all.jpg" border="0" width="1200" height="475" orgWidth="1200" orgHeight="475" usemap="#image_map" alt="Our Team" />
+            
+              <!-- <img id="team_all"  class="member" src="images/Team/team.jpg" alt="Our Team"/>-->
+              
+<map name="image_map" id="image_map">
+<!--<area shape="rect" coords="1198,473,1200,475" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />-->
+
+<area id="ajay" alt="Ajay" title="Ajay" shape="poly" coords="436,399,428,396,426,367,419,341,424,309,422,267,418,250,410,223,407,199,410,164,437,148,434,134,432,119,443,106,456,113,460,129,459,149,475,166,480,231,453,344,458,357,472,372,461,375,441,369,446,395" style="outline:none;" target="_self"     />
+
+<area id="amol" alt="Amol" title="Amol" shape="poly" coords="91,404,82,405,79,395,78,372,78,343,75,308,70,272,70,261,58,250,55,227,54,203,58,183,68,166,87,152,87,144,83,131,83,117,99,107,111,121,113,136,108,149,112,157,128,161,142,186,150,218,143,250,140,283,139,344,132,373,141,391,132,399,138,395,127,395,112,389,113,366,112,323,107,287,102,316,100,346,105,375,97,394" style="outline:none;" target="_self"     />
+
+<area id="arun" alt="Arun" title="Arun" shape="poly" coords="900,395,898,390,906,370,906,353,904,310,901,274,899,228,900,223,891,229,879,231,878,216,886,211,891,183,892,157,911,146,921,138,916,128,910,115,910,104,920,93,937,98,939,120,935,140,945,145,963,153,967,193,978,210,985,219,972,222,956,213,958,233,961,281,965,346,968,373,968,386,960,399,950,385,947,359,941,311,931,268,923,315,926,368,920,383,913,392" style="outline:none;" target="_self"     />
+
+<area id="gautam" alt="Gautam" title="Gautam" shape="poly" coords="822,383,824,366,833,347,827,287,832,270,831,250,851,228,852,216,841,191,824,171,821,164,824,149,841,136,836,124,834,100,847,95,862,115,861,138,882,144,893,152,887,183,883,209,872,213,872,229,878,239,888,251,890,292,894,327,896,361,892,381,879,390,879,372,871,360,868,321,858,275,857,327,848,368,849,380" style="outline:none;" target="_self"     />
+
+<area id="kalyan" alt="Kalyan" title="Kalyan" shape="poly" coords="1041,408,1034,401,1044,386,1032,387,1025,384,1038,373,1043,361,1038,338,1030,300,1021,273,1021,243,1022,199,1021,170,1031,148,1024,140,1020,119,1029,104,1042,104,1050,121,1050,141,1069,150,1082,179,1081,225,1072,259,1067,304,1067,377,1062,393,1056,402" style="outline:none;" target="_self"     />
+
+<area id="mitali" alt="Mitali" title="Mitali" shape="poly" coords="360,391,351,379,350,345,343,285,340,295,330,296,335,263,334,248,332,216,331,199,343,158,357,154,364,143,363,129,373,118,389,125,390,151,405,161,405,176,403,205,405,227,414,242,417,258,415,274,408,274,412,301,409,315,395,319,392,375,390,384,383,378,376,361,377,333,374,318,366,337,367,367,344,383,371,380,363,375" style="outline:none;" target="_self"     />
+
+<area id="nilesh" alt="Nilesh" title="Nilesh"  shape="poly" coords="607,380,599,376,597,359,597,329,599,270,597,240,609,224,614,199,615,185,605,165,595,144,585,136,596,126,613,112,613,86,629,77,634,105,638,124,645,139,651,160,634,177,629,207,625,227,641,234,644,245,639,281,630,336,645,349,646,358,616,351,614,375" style="outline:none;" target="_self"     />
+
+<area id="ninad" alt="Ninad" title="Ninad"  shape="poly" coords="637,390,635,381,649,365,644,326,645,306,645,280,645,240,647,226,633,228,628,222,633,208,636,179,658,163,650,152,644,128,653,116,669,118,678,138,679,156,708,167,725,198,724,216,706,215,705,235,709,270,718,334,720,363,732,388,727,399,708,379,703,366,700,344,692,319,676,280,668,305,666,346,667,371,651,385" style="outline:none;" target="_self"     />
+
+<area id="parag" alt="Parag" title="Parag"  shape="poly" coords="520,385,509,379,524,363,522,244,512,224,507,194,514,159,530,139,539,130,541,119,539,102,553,91,566,105,569,131,592,143,609,196,596,242,588,286,580,358,583,376,559,369,558,342,564,308,560,263,549,310,548,351,542,372" style="outline:none;" target="_self"     />
+
+<area id="praveen" alt="Praveen" title="Praveen"  shape="poly" coords="726,361,718,321,720,309,718,269,711,248,713,229,714,219,729,217,731,205,726,189,715,172,715,151,721,136,711,120,709,99,725,92,738,109,742,130,767,142,776,173,758,193,755,216,770,239,767,265,769,284,761,328,743,270,732,331,731,364" style="outline:none;" target="_self"     />
+
+<area id="pushpak" alt="Pushpak" title="Pushpak" shape="poly" coords="509,372,501,366,507,351,485,358,477,353,496,334,494,301,486,283,479,253,482,238,485,216,482,196,479,172,476,157,467,152,465,138,470,122,481,115,476,107,471,86,480,71,493,73,497,100,512,119,529,135,513,149,506,174,502,197,507,234,518,245,520,269,522,296,519,326,521,356,516,368" style="outline:none;" target="_self"/>
+
+<area id="raeha" alt="Raeha" title="Raeha"  shape="poly" coords="738,398,754,376,766,314,777,257,773,247,755,212,766,182,784,169,785,155,788,136,803,128,813,149,809,169,826,179,846,215,839,236,828,254,829,275,823,316,823,353,820,383,810,396,805,382,809,361,809,331,797,287,780,333,768,379,759,393" style="outline:none;" target="_self"     />
+
+<area id="saurabh" alt="Saurabh" title="Saurabh"  shape="poly" coords="157,394,141,388,135,374,140,328,149,301,148,256,151,217,146,189,135,161,146,147,169,135,167,103,186,94,195,115,196,157,195,173,188,214,186,238,194,255,187,292,183,323,182,352,189,364,172,373,163,371,165,320,156,341,158,365,163,385" style="outline:none;" target="_self"     />
+
+<area id="tushar" alt="Tushar" title="Tushar" shape="poly" coords="168,394,179,397,197,393,211,387,211,364,231,291,242,340,238,384,245,396,256,388,256,317,265,267,274,246,285,217,274,174,248,159,243,127,225,118,218,136,220,155,202,167,193,212,203,258,196,314,193,358,185,373" style="outline:none;" target="_self"     />
+
+<area id="virendra" alt="Virendra" title="Virendra"  shape="poly" coords="262,380,260,372,267,357,270,304,277,259,281,248,281,239,289,211,285,197,282,176,273,165,265,161,261,156,270,131,281,119,295,106,294,86,305,70,317,73,321,95,326,115,343,126,352,153,340,162,328,192,320,210,324,218,328,238,329,247,333,261,329,280,325,297,335,305,339,311,338,335,340,354,339,368,325,370,315,356,312,342,317,326,315,290,310,247,303,269,300,304,297,337,289,357,284,372" style="outline:none;" target="_self"     />
+
+<area id="vivek" alt="Vivek" title="Vivek"  shape="poly" coords="974,376,968,357,966,339,964,309,964,277,956,211,965,227,981,224,993,213,988,204,974,202,970,184,963,156,952,145,955,135,967,128,974,114,970,101,974,79,989,78,998,98,997,123,1021,133,1021,162,1017,183,1021,227,1019,265,1022,288,1029,361,1036,374,1025,379,1012,369,1007,344,993,253,989,247,982,276" style="outline:none;" target="_self"     />
+
+
+</map>
+		
+<div id="div_team_category"><p id="team_category"><a  class="team_category_active">All</a>  <strong>|</strong>  <a  class="team_category_inactive">Managers</a>  <strong>|</strong>  <a class="team_category_inactive">Software Engineers</a>  <strong>|</strong>  <a class="team_category_inactive">System Admins<a></p></div>
+           <!-- <img src="images/Team/parag1.png" id="parag" class="member parag" onClick="member_detail('parag');">-->
+        <!--<img src="images/Team/team.jpg" class="member" id="team_all" onClick="member_detail('arun');">-->
+      
+        <!-- <img src="images/Team/ajay_details.png" id="ajay_details">-->
+         
+		</div>
+
+        
+        
+        <div id="page9">	 <!-- CONTACT PAGE-->
+         	<div id="googleMap" style="width:100%;height:100%;"></div>
+                <div id="contact_bg_div">
+             <!--   <img id="contact_bg" src="images/contact_bg.png" style="opacity:0.85">-->
+                <div id="contact_bg" style="opacity:0.85; background-color:#222; background-image:url(images/02.png);"></div>
+                        <h2>Contact Us</h2>
+                    
+                   		<h5>Aakash Lab,<br>
+                        	2<sup>nd</sup> floor Old CSE Building,<br>
+							IIT Bombay, Powai,<br>
+							Mumbai-76. <br>
+							<br>
+                       		<i class="fa fa-phone fa-fw"></i> 022-2578-4708<br>
+							<i class="fa fa-envelope-o fa-fw"></i> labaakash@gmail.com
+                        </h5>
+                        
+                       <!-- <h1>
+                        <i class="fa fa-github-square fa-2x"></i>
+                        </h1>-->
+                </div>
+       		</div>
+        
+  	    </div>
+   
+   	 
+   <footer>
+   		<div id="footer_div" style="padding-top:8px;">
+         <div id="contact_bg" style="opacity:0.85; background-color:#222; background-image:url(images/02.png); z-index:-1"></div>
+						<h7>
+Developed at <span style="color:#09f;">Aakash Lab</span>, IIT Bombay.<br>
+<!--
+
+                         This work is licensed under a <a style="color:#09F" href="http://creativecommons.org/licenses/by-nc-nd/3.0/" target="_blank">  Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. </a>--></h7>
+						
+        </div>
+   </footer>
+ 
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>-->
+		<script src="js/jquery.catslider.js"></script>
+		<script>
+			$(function() {
+
+				$( '#mi-slider' ).catslider();
+
+			});
+		</script>
+		<script type="text/javascript" src="js/team.js"></script>
+        <script type="text/javascript" src="js/nav_titles.js"></script>
+
+
+		<!--<script type="text/javascript" src="js/scroll.js"></script>-->
+  </body>
+   
+</html>

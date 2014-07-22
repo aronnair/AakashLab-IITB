@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)http://demo.web3designs.com/practical-css3-tables-with-rounded-corners.htm -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>proxyMITY</title>
+<link rel="stylesheet" href="css/main.css" type="text/css"/>
+ <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+ <link href="images/favicon.png" rel="icon" type="image/x-icon" />
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+</head>
+ <script type="text/javascript">
+	$(document).ready(function(){
+		
+		  $('.slider_bg').delay(6000).animate({left: '20%'});
+		   $('.project_intro').delay(7000).animate({opacity: '0.2'});
+		    $('.project_features').delay(7000).animate({opacity: '1'});
+			 $('.slider_button').delay(7000).animate({opacity: '1'});
+		
+ $('.slider_button').click(function () {
+			 
+        var $slider = $('.slider_bg'),
+            val =  $('.slider_bg').get(0).style.left;
+					if(val=='20%'){
+						$slider.animate({left: '120%'},500);	
+					}
+					else{
+						$slider.animate({left: '20%'},500);
+					}
+        
+		
+		
+		 var $project_intro = $('.project_intro'),
+            val = $project_intro.css('opacity') === '1' ? '0.2' : '1';
+        $project_intro.animate({
+            opacity: val
+        }, 500)
+		
+		 var $project_features = $('.project_features'),
+            val = $project_features.css('opacity') === '1' ? '0' : '1';
+        $project_features.animate({
+            opacity: val
+        }, 500	)
+    });
+	
+});
+
+</script>
+
+<body>
+<img id="logo_main" src="images/aakashlab_logo.png" style="top:1%; left:1%;width:15%">
+<p class="project_intro">Watch lecture videos by<br>
+ reputed teachers
+from <strong><span style="color:#666">IITs</strong></span><br>
+on your Aakash tablet.</p>
+<img id="proxymity_header" class="single_app_head" src="images/proxymity/header.png">
+<img class="left_tablet" src="images/proxymity/left_tablet.png">
+<img class="right_tablet" src="images/right_tablet.png">
+<img class="slider_bg" src="images/proxymity/slider_bg.png">
+
+<p class="slider_button">
+   <i class="fa fa-list fa-2x"></i>
+</p>
+
+<pre class="project_features">
+			-  Topic-wise navigation <br>
+		-  Quizzes inside the videos<br>
+	-  Transcripts in Indian regional languages<br>	
+-  Bookmark feature to tag the lecture</pre>
+
+<div class="android_project_btn_panel">
+ <a href="http://www.it.iitb.ac.in/AakashApps/repo/proxyMITY_fdroid_1.0.apk" title="Download"><i class="fa fa-download fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="https://github.com/iitbaakash/proxyMITY-sdcard" target="_blank" title="View Source"><i class="fa fa-github fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" title="Documentation"><i class="fa fa-file-text fa-2x"></i></a>
+</div>
+
+</body></html>
