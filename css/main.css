@@ -418,6 +418,13 @@ opacity:0.6;
 font-size:10px;
 }
 
+.license_info{
+color:#FFF;	
+position:relative;
+margin-top:50%;
+font-family:myFontThick,"Trebuchet MS",Helvetica, sans-serif	;
+}
+
 #page1{
 background-color:#FFF;
 position:fixed;
@@ -1495,6 +1502,17 @@ font-size:30px;
 -ms-transition: all 0.5s ease-in-out;
 }
 	
+#battery_check_header{
+width:30%;
+left:35%;	
+}
+
+#iclass_header{
+width:15%;
+left:40%;	
+}	
+		
+	
 #diaslate_header{
 width:18%;
 left:40%;}
@@ -1704,3 +1722,7 @@ cursor:pointer;
         display: none;
     }
 }*/
+
+.android_project_icons > li > a{
+	width:15%;
+}
